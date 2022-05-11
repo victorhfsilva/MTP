@@ -61,21 +61,25 @@ public class Triangulo {
         this.lado1 = lado1;
         this.lado2 = lado2;
         this.lado3 = lado3;
+        perimetro = perimetro();
+        tipoTriangulo = tipoTriangulo();
     }
 
     public Triangulo(double lado) {
         lado1 = lado;
         lado2 = lado;
         lado3 = lado;
+        perimetro = perimetro();
+        tipoTriangulo = tipoTriangulo();
     }
     
-    public double perimetro(){
+    private double perimetro(){
         perimetro = lado1+lado2+lado3;
         System.out.println("Perímetro: "+perimetro);
         return perimetro;
     }
     
-    public String tipoTriangulo(){
+    private String tipoTriangulo(){
         if (lado1==lado2 && lado1==lado3){
             tipoTriangulo = "Equilátero";
         }
@@ -88,8 +92,15 @@ public class Triangulo {
         else {
             System.out.println("Erro no Condicional!");
         }
-        System.out.println(tipoTriangulo);
+        //System.out.println(tipoTriangulo);
         return tipoTriangulo;
     }
+
+    @Override
+    public String toString() {
+        return "lado1=" + lado1 + ", lado2=" + lado2 + ", lado3=" + lado3 + ", perimetro=" + perimetro + ", tipoTriangulo=" + tipoTriangulo;
+    }
+    
+    
     
 }

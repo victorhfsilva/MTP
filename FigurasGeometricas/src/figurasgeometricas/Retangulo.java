@@ -50,4 +50,9 @@ public class Retangulo {
         System.out.println("Área: "+base*altura);
     }
     
+    @Override
+    public String toString(){
+        return "Base: "+base+" "+"Altura: "+altura+"\tÁrea: "+base*altura;
+    }
+    
 }
