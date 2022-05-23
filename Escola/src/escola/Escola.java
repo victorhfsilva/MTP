@@ -47,6 +47,10 @@ public class Escola {
         for (Aluno i : listaAlunos) {
             System.out.println("Nome: "+i.getNome()+" Número de Matrícula: "+i.getNumMatricula());
         }
+        
+        //Atividade Semanal 4
+        listaAlunos.get(3).cadastrarEndereco("Rua Oswaldo Guimarães", 4016, "Nova Alvorada", "37.714-153");
+        System.out.println(listaAlunos.get(3));
     }
     
 }
