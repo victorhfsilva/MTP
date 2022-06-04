@@ -12,11 +12,20 @@ public class Pessoa {
     
     private String nome;
     private String cpf;
+    private int idade;
     private Endereco endereco;
 
-    public Pessoa(String nome, String cpf) {
+    public Pessoa(String nome, String cpf, int idade) {
         this.nome = nome;
         this.cpf = cpf;
+        this.idade = idade;
+    }
+    
+    public Pessoa(String nome, String cpf, int idade, Endereco endereco) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.idade = idade;
+        this.endereco = endereco;
     }
 
     public String getNome() {
@@ -35,6 +44,14 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+    
     public Endereco getEndereco() {
         return endereco;
     }
@@ -62,7 +79,7 @@ public class Pessoa {
     
     @Override
     public String toString() {
-        return "nome=" + nome + ", cpf=" + cpf + ", "+endereco;
+        return "nome=" + nome + ", cpf=" + cpf + ", idade=" + idade + ", "+endereco;
     }
     
 }

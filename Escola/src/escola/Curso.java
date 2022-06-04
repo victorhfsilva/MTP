@@ -26,6 +26,10 @@ public class Curso {
         this.listaDisciplinasGrade = listaDisciplinasGrade;
     }
     
+    public Curso(){
+        
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -66,7 +70,7 @@ public class Curso {
     public void cadastrarDisciplina(String nome,String codigo, int cargaHoraria){
         try{
             for (Disciplina d : listaDisciplinasGrade){
-                if(d.getCodigo().equals(codigo)) throw new Exception();
+                if(d.getCodigo().equals(codigo)||d.getNome().equals(nome)) throw new Exception();
             }
             listaDisciplinasGrade.add(new Disciplina(nome,codigo,cargaHoraria));
         }
@@ -74,7 +78,27 @@ public class Curso {
             System.out.println("Erro: Código da Disciplina Duplicado!");
         }
     }
+    /**
+     * Cadastra Disciplina
+     * @param disciplina 
+     */
+    public void cadastrarDisciplina(Disciplina disciplina){
+        try{
+            for (Disciplina d : listaDisciplinasGrade){
+                if(d.getCodigo().equals(disciplina.getCodigo()) || d.getNome().equals(disciplina.getNome())) throw new Exception();
+            }
+            listaDisciplinasGrade.add(disciplina);
+        }
+        catch (Exception e){
+            System.out.println("Erro: Disciplina Duplicada!");
+        }
+    }
     
+    /**
+     * Retorna a Disciplina através do Código da Disciplina
+     * @param codigo
+     * @return Disciplina
+     */
     public Disciplina consultarDisciplinaPorCodigo(String codigo){
         for (Disciplina d : listaDisciplinasGrade){
             if(d.getCodigo().equals(codigo)) return d;
